@@ -1,0 +1,62 @@
+<template>
+
+    <div class="top_area">
+        <h1><a href="#none"><img src="/images/map/logo_map.png" alt="" /></a>{{cMsg}}{{storeTestData}}</h1>
+
+        <!-- 180906 : 3.검색위치 이동 및 수정 -->
+        <div class="search_area_wrap">
+            <select title="검색옵션선택">
+                <option>매장명</option>
+                <option>지역명</option>
+            </select>
+            <input type="text" placeholder="지역명/매장명으로 검색" id="testInput" v-model="cMsg">
+            <a href="#none" class="btn_search">검색</a>
+        </div>
+        <!-- 180906 : 3.//검색위치 이동 및 수정 -->
+
+        <div class="top_nav">
+            <Navbar></Navbar>
+            <ul>
+                <li><a href="#none" class="mem_info"><span>홍길동님</span></a></li>
+                <li>
+                    <a href="#none" class="btn_sel_menu">데이터서비스</a>
+                    <!--div class="sel_menu">
+                        <ul>
+                            <li><a href="#none">Data Portal</a></li>
+                            <li><a href="#none">지역기반 분석</a></li>
+                            <li><a href="#none">대조군 분석</a></li>
+                            <li><a href="#none">데이터 찾기(DGC)</a></li>
+                            <li><a href="#none">셀프 데이터 분석</a></li>
+                            <li><a href="#none">Dr.Know (출시예정)</a></li>
+                            <li><a href="#none" class="email">문의 dsc_ats@sk.com</a></li>
+                        </ul>
+                    </div-->
+                </li>
+                <!-- 180906 : 4. 상단버튼 추가 -->
+                <li>
+                    <a href="#none" class="guide">
+                        사용안내
+                    </a>
+                </li>
+                <!-- //180906 : 4. 상단버튼 추가 -->
+            </ul>
+            
+        </div>
+    </div>
+
+</template>
+<script>
+import Navbar from 'views/nav/Navbar.vue';
+import {mapState, mapMutations, mapActions} from 'vuex';
+//import t from 'vuews/layout/center.vue';
+//debugger;
+export default {
+    props: ['cMsg'],
+    components: {
+        Navbar
+    },
+    computed : {
+        ...mapState(['storeTestData','aaa'])
+    }
+}
+</script>
